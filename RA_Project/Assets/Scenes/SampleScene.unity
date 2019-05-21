@@ -1053,9 +1053,9 @@ GameObject:
   - component: {fileID: 1527685103}
   - component: {fileID: 1527685102}
   - component: {fileID: 1527685101}
+  - component: {fileID: 1527685098}
   - component: {fileID: 1527685100}
   - component: {fileID: 1527685099}
-  - component: {fileID: 1527685098}
   m_Layer: 0
   m_Name: SpawnTarget
   m_TagString: Untagged
@@ -1075,8 +1075,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c2fcf0d2edca314eb803028db6b3043, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zombie_prefab: {fileID: 0}
-  spawn_timer: 9
+  turret_target: {fileID: 560879543}
+  spawn_timer: 5
   zombies:
   - {fileID: 887631628}
   - {fileID: 515436872}
