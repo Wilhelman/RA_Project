@@ -20,8 +20,8 @@ public class Spawner : MonoBehaviour
         if (timer > spawn_timer)
         {
             timer = 0.0f;
-            float x_pos = Random.Range(-5.0f, 5.0f);
-            float z_pos = Random.Range(-5.0f, 5.0f);
+            float x_pos = Random.Range(-20.0f, 20.0f);
+            float z_pos = Random.Range(-20.0f, 20.0f);
             Vector3 random_pos = new Vector3(transform.position.x + x_pos, transform.position.y, transform.position.z + z_pos);
             Instantiate(zombie_prefab, random_pos, Quaternion.identity, this.transform);
         }
