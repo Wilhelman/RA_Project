@@ -7,7 +7,7 @@ public class Spawner : MonoBehaviour
     public GameObject turret_target = null;
 
     public float spawn_timer = 5.0f;
-    public float zombie_speed = 0.01f;
+    public float zombie_speed = 0.0001f;
 
     private float timer = 0.0f;
 
@@ -25,12 +25,10 @@ public class Spawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timer += Time.deltaTime;
-
-        if (timer > spawn_timer && count != zombies.Length)
+        
+        if (count < zombies.Length)
         {
             zombies[count].SetActive(true);
-            timer = 0.0f;
             count++;
         }
 
@@ -47,12 +45,18 @@ public class Spawner : MonoBehaviour
             {
                 z.transform.position = this.transform.position;
                 z.SetActive(false);
-            }
-                
+            } 
         }
 
-        // TODO: if all zombies are dead start again
+        if (AreAllDead())
+            count = 0;
 
+    }
+
+    private bool AreAllDead()
+    {
+        return zombies[0].active == false && zombies[1].active == false && zombies[2].active == false 
+               && zombies[3].active == false && zombies[4].active == false;
     }
 
     private Vector3 GetRandomPos(Vector3 current_pos, float random_range)
