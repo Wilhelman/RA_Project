@@ -4,62 +4,26 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    public GameObject turret_target = null;
+    public GameObject zombie_prefab = null;
 
-    public float spawn_timer = 5.0f;
- 
+    public float spawn_timer = 3.0f;
 
     private float timer = 0.0f;
 
-
-    public Zombie[] zombies;
-    private int count = 0;
-
-    // Use this for initialization
-    void Start()
-    {
-        foreach (Zombie z in zombies)
-            z.gameObject.SetActive(false);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (count < zombies.Length)
+	// Use this for initialization
+	void Start () {}
+	
+	// Update is called once per frame
+	void Update () {
+        timer += Time.deltaTime;
+        Debug.Log(timer);
+        if (timer > spawn_timer)
         {
-            zombies[count].gameObject.SetActive(true);
-            zombies[count].gameObject.transform.position = zombies[count].original_pos;
-            count++;
+            timer = 0.0f;
+            float x_pos = Random.Range(-5.0f, 5.0f);
+            float z_pos = Random.Range(-5.0f, 5.0f);
+            Vector3 random_pos = new Vector3(transform.position.x + x_pos, transform.position.y, transform.position.z + z_pos);
+            Instantiate(zombie_prefab, random_pos, Quaternion.identity, this.transform);
         }
-
-        foreach (Zombie z in zombies)
-        {
-            if (z.gameObject.active == true)
-                z.transform.position += z.speed * z.dir;
-
-            if (Mathf.Abs((z.transform.position - turret_target.transform.position).magnitude) <= 3.0f)
-            {
-                z.transform.position = this.transform.position;
-                z.gameObject.SetActive(false);
-            } 
-        }
-
-        if (AreAllDead())
-            count = 0;
-
-    }
-
-    private bool AreAllDead()
-    {
-        return zombies[0].gameObject.active == false && zombies[1].gameObject.active == false && zombies[2].gameObject.active == false 
-               && zombies[3].gameObject.active == false && zombies[4].gameObject.active == false;
-    }
-
-    private Vector3 GetRandomPos(Vector3 current_pos, float random_range)
-    {
-        float x_pos = Random.Range(-random_range, random_range);
-        float z_pos = Random.Range(-random_range, random_range);
-
-        return new Vector3(current_pos.x + x_pos, current_pos.y, current_pos.z + z_pos);
-    }
+	}
 }
