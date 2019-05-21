@@ -1076,7 +1076,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zombie_prefab: {fileID: 0}
-  spawn_timer: 3
+  spawn_timer: 9
   zombies:
   - {fileID: 887631628}
   - {fileID: 515436872}

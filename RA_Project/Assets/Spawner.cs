@@ -24,23 +24,24 @@ public class Spawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        timer += Time.deltaTime;
 
-        if (Input.GetKeyDown("space") && count < zombies.Length)
+        if (timer > spawn_timer && count != zombies.Length)
         {
             zombies[count].SetActive(true);
+            timer = 0.0f;
             count++;
         }
 
-        //timer += Time.deltaTime;
+        // TODO: if all zombies are dead start again
 
-            /*if (timer > spawn_timer && count != zombies.Length())
-            {
-                timer = 0.0f;
-                count++;
-                float x_pos = Random.Range(-1.0f, 1.0f);
-                float z_pos = Random.Range(-1.0f, 1.0f);
-                Vector3 random_pos = new Vector3(transform.position.x + x_pos, transform.position.y, transform.position.z + z_pos);
+    }
 
-            }*/
+    private Vector3 GetRandomPos(Vector3 current_pos, float random_range)
+    {
+        float x_pos = Random.Range(-random_range, random_range);
+        float z_pos = Random.Range(-random_range, random_range);
+
+        return new Vector3(current_pos.x + x_pos, current_pos.y, current_pos.z + z_pos);
     }
 }
