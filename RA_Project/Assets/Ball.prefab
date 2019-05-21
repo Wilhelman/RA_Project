@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 3541297539449363086}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 84.684, y: 66.01055, z: -100.190384}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 31.48629, y: 31.48629, z: 31.48629}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -109,4 +109,4 @@ MonoBehaviour:
   goal: {fileID: 2437835421317006762, guid: cadc450fc1cbaa04097f2de4f2232481, type: 3}
   goalkeeper: {fileID: 7369921381688643926, guid: 156ff76184653c84dac64ef4d4e1c8b2,
     type: 3}
-  manager: {fileID: 5504513182669351617, guid: dcffd601ebf3db144be2455c406f22c2, type: 3}
+  turret: {fileID: 1251687426293393160, guid: c1d0691842e51794bbb7c1f907f4031a, type: 3}

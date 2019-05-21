@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Turret5000XL : MonoBehaviour {
 
@@ -9,6 +10,10 @@ public class Turret5000XL : MonoBehaviour {
     public float shoot_timer = 3.0f;
 
     private float timer = 0.0f;
+
+    int shooter_points = 0;
+    int keeper_points = 0;
+
 
     // Use this for initialization
     void Start() { }
@@ -23,4 +28,5 @@ public class Turret5000XL : MonoBehaviour {
             Instantiate(bullet, transform.position, Quaternion.identity, this.transform);
         }
     }
+
 }

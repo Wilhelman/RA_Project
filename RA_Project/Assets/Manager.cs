@@ -11,15 +11,23 @@ public class Manager : MonoBehaviour
     public Text textGoals;
     public Text textStopped;
 
+    void Start()
+    {
+        textGoals.text = "Goals: 11 ";
+        textStopped.text = "Stopped: 11 ";
+    }
+
     public void UpdateGoals()
     {
         shooter_points++;
-        textGoals.text += shooter_points.ToString();
+        textGoals.text = "Goals: 11 ";
+        //textGoals.text += shooter_points.ToString();
     }
 
     public void UpdateStopped()
     {
         goalkeeper_points++;
-        textStopped.text += goalkeeper_points.ToString();
+        textStopped.text = "Stopped: 12";
+        Debug.Log("helloooo");
     }
 }
