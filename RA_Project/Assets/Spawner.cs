@@ -7,7 +7,7 @@ public class Spawner : MonoBehaviour
     public GameObject turret_target = null;
 
     public float spawn_timer = 5.0f;
-    public float zombie_speed = 0.1f;
+ 
 
     private float timer = 0.0f;
 
@@ -35,11 +35,7 @@ public class Spawner : MonoBehaviour
         foreach (Zombie z in zombies)
         {
             if (z.gameObject.active == true)
-            {
-                Vector3 dir = turret_target.transform.position - z.transform.position;
-                dir.Normalize();
-                z.transform.position += zombie_speed * dir;
-            }
+                z.transform.position += z.speed * z.dir;
 
             if (Mathf.Abs((z.transform.position - turret_target.transform.position).magnitude) <= 3.0f)
             {

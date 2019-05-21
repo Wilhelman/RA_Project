@@ -92,6 +92,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 747469eafc4cdc64f891d9c6b5e67ff4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  turret_target: {fileID: 1527677277355778689, guid: 36d5c7e9278951f41ba818b4e7cc5b0c,
+    type: 3}
+  original_pos: {x: 0, y: 0, z: 0}
+  dir: {x: 0, y: 0, z: 0}
+  speed: 0.1
 --- !u!65 &5108976516788848610
 BoxCollider:
   m_ObjectHideFlags: 0
