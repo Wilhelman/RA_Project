@@ -7,6 +7,7 @@ public class Bullet : MonoBehaviour {
     public float velocity = 1.0f;
     public GameObject goal;
     public GameObject goalkeeper;
+    public Manager manager;
 
     // Use this for initialization
     void Start () {
@@ -18,18 +19,21 @@ public class Bullet : MonoBehaviour {
         transform.Translate(Vector3.forward * velocity);
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider collision)
     {
-        if(collision.gameObject == goal)
+        if(collision.gameObject.tag == "Goal")
         {
             // 1 POINT TO GRIFFINDOR
-            Destroy(this);
-        }else if( collision.gameObject == goalkeeper)
+            manager.UpdateGoals();
+            Destroy(this.gameObject);
+        }else if(collision.gameObject.tag == "Goalkeeper")
         {
             // 1 POINT TO SLICERING
-            Destroy(this);
+            manager.UpdateStopped();
+            Destroy(this.gameObject);
+
         }
 
-
+        Debug.Log("Hello motherfucker!");
     }
 }
