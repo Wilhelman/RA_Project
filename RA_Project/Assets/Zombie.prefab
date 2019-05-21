@@ -92,11 +92,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 747469eafc4cdc64f891d9c6b5e67ff4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turret_target: {fileID: 1527677277355778689, guid: 36d5c7e9278951f41ba818b4e7cc5b0c,
+  turret_target: {fileID: 3709828968186825726, guid: 36d5c7e9278951f41ba818b4e7cc5b0c,
     type: 3}
   original_pos: {x: 0, y: 0, z: 0}
-  dir: {x: 0, y: 0, z: 0}
-  speed: 0.1
+  speed: 10
 --- !u!65 &5108976516788848610
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -105,7 +104,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4657643183317840355}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
