@@ -17,7 +17,6 @@ public class Turret5000XL : MonoBehaviour {
     void Update()
     {
         timer += Time.deltaTime;
-        Debug.Log(timer);
         if (timer > shoot_timer)
         {
             timer = 0.0f;
